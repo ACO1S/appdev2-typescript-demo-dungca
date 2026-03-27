@@ -1,11 +1,9 @@
 // console.log("Hello World!")
 
-let userName: string = "Elmer";
-let userAge = 31;
+let userName: string = "Francois";
+let userAge: number = 20;
 
 // ...
-
-userAge = "31"
 
 console.log(`Username - ${userName}`)
 console.log(`Age - ${userAge}`)
