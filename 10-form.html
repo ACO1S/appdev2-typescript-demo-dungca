@@ -3,16 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="10-type-narrowing.js" defer></script>
+    <title>Basic Form Experiment</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.querySelector('form');
+            const input = document.getElementById('user-name');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault(); // prevent page reload
+                const nickname = input.value;
+                alert(`Hi ${nickname}!`); // show greeting
+            });
+        });
+    </script>
 </head>
 <body>
     <form>
         <p>
-            <label>Your name</label>
-            <input type="text" id="user-name" />
+            <label>Enter Your Nickname</label>
+            <input type="text" id="user-name" value="Francois" />
         </p>
-        <button>Submit</button>
+        <button>Send</button>
     </form>
 </body>
 </html>
