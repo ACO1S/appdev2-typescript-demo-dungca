@@ -1,37 +1,24 @@
-// Optional Values in parameter
-function generateError(msg?: string) {
-    throw new Error(msg)
-}
-
-generateError("An error occured") // Automatic Semicolon Insertion pitfall - add ; to explicitly tell that this is a function
-// generateError()
-
-
 (() => {
-    // Optional Values in object properties
-    type User = {
-        name: string;
+    type Person = {
+        fullName: string;
         age: number;
-        role?: 'admin' | 'guess'
+        occupation?: 'developer' | 'designer' | 'manager';
     }
 
-    let user: User = {
-        name: 'Elmer',
-        age: 31
+    const person: Person = {
+        fullName: 'Francois Dungca',
+        age: 21
     }
 
-    user.name
-    user.age
-})
+    console.log('Name:', person.fullName);
+    console.log('Age:', person.age);
+    console.log('Occupation:', person.occupation);
+})();
 
-// Nullish Coalescing `??` operator 
-let input = ''
-const didProvideInput = input ?? false;
+let userInput = '';
 
-// try it on browser console log to see results
-// update it `??` to `||`
-// `||` check for falsy not false - falsy = null, undefined, 0, empty string, etc
-// ?? check only if null or undefined
+const providedInput = userInput !== '' ? userInput : 'Default Input';
+console.log('Using ?? operator:', providedInput);
 
-// Use || when you want to fall back on any falsy value.
-// Use ?? when you only want to fall back on null or undefined.
+const providedInputOr = userInput || 'Default Input';
+console.log('Using || operator:', providedInputOr);
