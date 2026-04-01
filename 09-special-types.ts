@@ -2,24 +2,23 @@
 let a: null;
 
 a = null
-// a = "Hi"
 
 let b: null | string
 
+b = "Hello"   // changed from "Hi"
 b = null
-b = "Hi"
-// b = 10
 
 // Special Type - undefined
 let c: undefined;
 
 c = undefined
-// c = null
-// c = "Hi"
 
 let d: undefined | string
 
+d = "World"   // changed from "Hi"
 d = undefined
-d = "Hi"
-// d = null
-// d = 10
+
+console.log("a:", a)
+console.log("b:", b)
+console.log("c:", c)
+console.log("d:", d)
